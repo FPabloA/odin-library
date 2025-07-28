@@ -3,24 +3,57 @@ html, body {
     height: 100%;
 }
 
+label {
+    font-size: 18px;
+}
+
+input {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
 .page-wrapper {
     display: flex;
     flex-direction: row;
     border: rgb(107, 175, 231) solid;
     border-radius: 10px;
-    height: 98%;
+
     margin: 20px;
 }
 
 .page-sidebar {
     flex-grow: 1;
-    display: none;
+    margin: 0;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px;
+    max-width: 70%;
 }
 
 .page-content {
     display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 15px;
     flex-grow: 3;
     background-color: rgba(211, 211, 211, 0.541);
+    justify-content: center;
+}
+
+#add-btn {
+    position: absolute;
+    margin: 15px;
+    left: 0;
+    padding: 4px 8px;
+    font-weight: bold;
+    border: 2px rgb(107, 175, 231) solid;
+    border-radius: 10px;
+    background-color: white;
+    height:min-content;
 }
 
 .card-wrapper {
