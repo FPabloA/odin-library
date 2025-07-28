@@ -6,6 +6,7 @@ function Book (title, author, numPages, haveRead) {
     this.author = author;
     this.numPages = numPages;
     this.haveRead = haveRead;
+    this.uid = crypto.randomUUID();
     this.info = function() {
         if (this.haveRead) {
             console.log(this.title + " by " + this.author + ", " + this.numPages + ", have read");
@@ -15,6 +16,10 @@ function Book (title, author, numPages, haveRead) {
         }
         
     }
+}
+
+function addBookToLibrary() {
+    
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkein", 295, true);
