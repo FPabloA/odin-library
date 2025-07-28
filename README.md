@@ -1,0 +1,1 @@
+Quick JS project following the libary project outline in The Odin Project
