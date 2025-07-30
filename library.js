@@ -6,16 +6,16 @@ const numPagesInput = document.getElementById("book-numpages");
 const readInput = document.getElementById("book-readstatus");
 let bookList = [];
 
-function Book (title, author, numPages, haveRead) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
+class Book {
+    constructor (title, author, numPages, haveRead) {
+        this.title = title;
+        this.author = author;
+        this.numPages = numPages;
+        this.haveRead = haveRead;
+        this.uid = crypto.randomUUID();
     }
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.haveRead = haveRead;
-    this.uid = crypto.randomUUID();
-    this.toggleRead = function() {
+
+    toggleRead() {
         this.haveRead = !this.haveRead;
         const cardStatus = document.getElementById(this.uid + "-status");
         if (this.haveRead) {
@@ -24,10 +24,9 @@ function Book (title, author, numPages, haveRead) {
         else {
             cardStatus.innerHTML = "Have not read this book";
         }
-    };
-    this.removeCard = function() {
-        // document.getElementById(this.uid).remove();
-        // // thisCard.remove();
+    }
+
+    removeCard () {
         bookList = bookList.filter(item => item != this)
         displayCards();
     }
